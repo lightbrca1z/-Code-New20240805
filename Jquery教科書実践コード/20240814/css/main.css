@@ -1,0 +1,150 @@
+/*
+ * Base
+ */
+html {
+    font-family: "Helvetica Neue", "Arial", "Hiragino Kaku Gothic ProN", "Meiryo", sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+body {
+    background-color: black;
+}
+
+img {
+    vertical-align: middle;
+}
+
+button {
+    outline: none;
+}
+
+::-moz-selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+
+::selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+
+.page-header {
+    background-color: #fff;
+}
+
+.page-header h1 {
+    height: 80px;
+    margin: 0 auto;
+    padding-left: 10px;
+    font-size: 20px;
+    font-weight: normal;
+    line-height: 80px;
+    letter-spacing: 0.1em;
+}
+
+.page-main {
+    position: relative;
+}
+
+.page-main > div {
+    padding: 50px 0 100px;
+}
+
+.page-main > div h2 {
+    color: #fff;
+    text-align: center;
+    margin: 0 0 50px;
+    font-weight: normal;
+    letter-spacing: 0.15em;
+}
+
+button {
+    padding: 0;
+    margin: 0;
+    border: none;
+}
+
+#buttons2 button img {
+    padding: 0;
+    margin: 0;
+    display: block; /* これにより、画像が白い余白を生成しないようにします */
+}
+
+#buttons2 {
+    background-color: greenyellow;
+    width:100%;
+    height: 300px;
+}
+
+.inner {
+    display: flex; /* ボタンを横並びにする */
+    width:100%;
+    justify-content: center; /* ボタン全体を中央配置 */
+    align-items: center; /* ボタンを縦方向でも中央配置 */
+    gap: 5px; /* ボタン間のスペースを調整（必要に応じて） */
+}
+
+#buttons2 button { /* ボタンの幅を調整 */
+    display: flex;
+    justify-content: center; /* 画像を横方向の中央配置 */
+    align-items: center; /* 画像を縦方向の中央配置 */
+    padding: 0;
+    margin: 0;
+    border: none;
+    background: none;
+}
+
+#buttons2 button img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+#button2 button p{
+    margin-top: 50px;
+    margin-bottom: 0px;
+}
+
+.page-footer {
+    background-color: #656565;
+}
+
+.page-footer small {
+    display: block;
+    color: #fff;
+    font-size: 11px;
+    text-align: right;
+    margin: 0 auto;
+    height: 120px;
+    line-height: 120px;
+    letter-spacing: 0.15em;
+    margin-right: 15px; /* 右側に20pxの余白を追加 */
+}
+
+.page-footer a {
+    color: #fff;
+    text-decoration: none;
+}
+/*
+ * Helpers
+ */
+
+/* Clearfix */
+.clearfix:before,
+.clearfix:after {
+    content: " ";
+    display: table;
+}
+.clearfix:after {
+    clear: both;
+}
+
+/* #button2 */
+#buttons2 button img:first-child {
+    position: absolute;
+}
+#buttons2 button img:nth-child(2) {
+    opacity: 0;
+}
+
