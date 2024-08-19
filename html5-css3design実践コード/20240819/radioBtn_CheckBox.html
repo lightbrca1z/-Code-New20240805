@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            margin: 0;
+        }
+        form{
+            padding: 16px;
+        }
+        .label-p{
+            margin-bottom: 0;
+        }
+        .input-group{
+            margin: 0;
+            padding: 0;
+            list-style-type: none;
+        }
+        .horizontal li{
+            display: inline;
+            margin-right: 1em;
+        }
+    </style>
+</head>
+<body>
+    <form action="#">
+        <p class="label-p">時刻の設定</p>
+        <!-- ラジオボタン -->
+         <ul class="input-group, horizontal">
+            <li>
+                <input type="radio" name="duration" id="r1"
+                value="1" checked><label for="r1">
+                    いますぐ出発
+                </label>
+            </li>
+            <li>
+                <input type="radio" name="duration" id="r2"
+                value="2"><label for="r2">
+                    出発時刻
+                </label>
+            </li>
+            <li>
+                <input type="radio" name="duration" id="r3"
+                value="3"><label for="r3">
+                    到着時刻
+                </label>
+            </li>
+         </ul>
+         <p class="label-p">オプション</p>
+         <!-- チェックボックス -->
+          <ul class="input-group, horizontal">
+            <li>
+                <input type="checkbox" name="option" id="c1"
+                value="1"><label for="c1">
+                    特急を優先
+                </label>
+            </li>
+            <li>
+                <input type="checkbox" name="option" id="c2"
+                value="2"><label for="c2">
+                    新幹線を優先
+                </label>
+            </li>
+            <li>
+                <input type="checkbox" name="option" id="c3"
+                value="3"><label for="c3">
+                    バスがあれば利用
+                </label>
+            </li>
+          </ul>
+    </form>
+</body>
+</html>
