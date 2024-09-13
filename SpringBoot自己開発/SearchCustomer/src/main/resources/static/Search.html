@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>顧客検索システム</title>
+</head>
+<body>
+    <h3>顧客検索システム</h3>
+    <form action="/" method="post">
+        <input type="text" name="customer" placeholder="顧客名を入力">
+        <input type="submit" value="検索">
+    </form>
+    <table border="1">
+        <tr>
+            <th>顧客番号</th>
+            <th>顧客名</th>
+            <th>所属</th>
+        </tr>
+        <tr th:each="customer : ${customers}">
+            <td th:text="${customer.id}"></td>
+            <td th:text="${customer.name}"></td>
+            <td th:text="${customer.department}"></td>
+        </tr>
+    </table>
+</body>
+</html>

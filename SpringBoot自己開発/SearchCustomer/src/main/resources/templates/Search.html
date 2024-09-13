@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Search</title>
+</head>
+<body>
+    <h1>顧客検索</h1>
+    
+    <!-- 名前での検索フォーム -->
+    <form action="/searchByName" method="post">
+        <label for="customerName">顧客名:</label>
+        <input type="text" id="customerName" name="customerName">
+        <button type="submit">検索</button>
+    </form>
+
+    <!-- 顧客番号での検索フォーム -->
+    <form action="/searchById" method="post">
+        <label for="customerId">顧客番号:</label>
+        <input type="number" id="customerId" name="customerId">
+        <button type="submit">検索</button>
+    </form>
+
+    <!-- 名前による検索結果の表示 -->
+    <div th:if="${customers != null and #lists.size(customers) > 0}">
+        <h2>名前による検索結果:</h2>
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>名前</th>
+                    <th>部門</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="customer : ${customers}">
+                    <td th:text="${customer.id}"></td>
+                    <td th:text="${customer.name}"></td>
+                    <td th:text="${customer.department}"></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- 顧客番号による検索結果の表示 -->
+    <div th:if="${customer != null}">
+        <h2>顧客番号による検索結果:</h2>
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>名前</th>
+                    <th>部門</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td th:text="${customer.id}"></td>
+                    <td th:text="${customer.name}"></td>
+                    <td th:text="${customer.department}"></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

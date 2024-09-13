@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>SampleCalc</title>
+</head>
+<body>
+    <form id="priceForm">
+        <table id="priceTable">
+            <tr>
+                <th>顧客名</th>
+                <th>商品名</th>
+                <th>価格</th>
+            </tr>
+            <!-- 商品1 -->
+            <tr>
+                <td><input type="text" name="customerName" value="顧客名1"></td>
+                <td><input type="text" name="productName" value="商品名1"></td>
+                <td><input type="number" name="price" value="1000" class="price"></td>
+            </tr>
+            <!-- 商品2 -->
+            <tr>
+                <td><input type="text" name="customerName" value="顧客名2"></td>
+                <td><input type="text" name="productName" value="商品名2"></td>
+                <td><input type="number" name="price" value="2000" class="price"></td>
+            </tr>
+            <!-- 商品3 -->
+            <tr>
+                <td><input type="text" name="customerName" value="顧客名3"></td>
+                <td><input type="text" name="productName" value="商品名3"></td>
+                <td><input type="number" name="price" value="3000" class="price"></td>
+            </tr>
+            <tr>
+                <td colspan="2">合計価格</td>
+                <td><span id="totalPrice">0</span>円</td>
+            </tr>
+        </table>
+        <button type="button" onclick="calculateTotal()">合計を計算</button>
+    </form>
+
+    <script>
+        function calculateTotal() {
+            // 各商品の価格を取得
+            const prices = Array.from(document.querySelectorAll('.price')).map(input => parseInt(input.value, 10));
+            
+            // 合計価格を計算
+            const totalPrice = prices.reduce((sum, price) => sum + price, 0);
+
+            // 合計価格を表示
+            document.getElementById('totalPrice').textContent = totalPrice;
+
+            // サーバーに合計価格を送信する場合は、以下のコードを追加
+            // fetch('/calculate', {
+            //     method: 'POST',
+            //     headers: {
+            //         'Content-Type': 'application/json'
+            //     },
+            //     body: JSON.stringify(prices)
+            // })
+            // .then(response => response.json())
+            // .then(data => {
+            //     document.getElementById('totalPrice').textContent = data.totalPrice;
+            // })
+            // .catch(error => console.error('Error:', error));
+        }
+    </script>
+</body>
+</html>
