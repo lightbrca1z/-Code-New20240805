@@ -1,13 +1,19 @@
-import { useState } from "react";
-import ComponentA from "./components/ComponentA";
+import { useState, lazy, Suspense, startTransition } from "react";
 
+const LazyComponentA = lazy(() => import('./components/ComponentA'))
+const LazyComponentB = lazy(() => import('./components/ComponentB'))
 const Example = () => {
   const [compA, setCompA] = useState(false);
 
   return (
     <>
-      <button onClick={() => setCompA((prev) => !prev)}>ComponentA</button>
-      {compA && <ComponentA />}
+      <button onClick={() => {
+        startTransition(() => {
+          setCompA((prev) => !prev)
+        })
+      }}>ComponentA</button>
+      {compA ? <LazyComponentA/> : <LazyComponentB/>}
+      <Suspense fallback={<div>Loading!!!!</div>}></Suspense>
     </>
   );
 };
