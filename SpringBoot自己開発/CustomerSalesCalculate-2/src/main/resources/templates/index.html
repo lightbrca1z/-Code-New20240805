@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>合計額　計算アプリ</title>
+</head>
+<body>
+    <h1>合計額　計算アプリ</h1>
+    
+    <form th:action="@{/calculate}" method="post">
+        <label for="price1">金額 1:</label>
+        <input type="number" name="prices" id="price1" required><br><br>
+
+        <label for="price2">金額 2:</label>
+        <input type="number" name="prices" id="price2" required><br><br>
+
+        <label for="price3">金額 3:</label>
+        <input type="number" name="prices" id="price3"><br><br>
+
+        <button type="submit">金額合計</button>
+    </form>
+</body>
+</html>
