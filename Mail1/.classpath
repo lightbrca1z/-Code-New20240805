@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-21">
+		<attributes>
+			<attribute name="module" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry exported="true" kind="lib" path="/Users/lighttobrca/Downloads/javax.mail-1.6.2.jar"/>
+	<classpathentry exported="true" kind="lib" path="/Users/lighttobrca/Downloads/java-dotenv-5.2.2.jar"/>
+	<classpathentry exported="true" kind="lib" path="/Users/lighttobrca/Downloads/kotlin-stdlib-1.4.0.jar"/>
+	<classpathentry exported="true" kind="lib" path="/Users/lighttobrca/Downloads/jakarta.activation-2.0.1.jar"/>
+	<classpathentry exported="true" kind="lib" path="/Users/lighttobrca/Downloads/javax.activation.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>
